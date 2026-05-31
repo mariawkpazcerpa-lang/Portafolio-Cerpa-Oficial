@@ -1,0 +1,215 @@
+@use "variables" as variable;
+@use "mixins" as mix ;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 70px !important; 
+    background-image: var(--body-background);
+    background-repeat: no-repeat; /* <-- Esta es la clave para evitar el mosaico */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed ;
+    font-family: variable.$font-primary;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.theme-switch__label {
+    display: flex;
+    align-items: center;
+    width: 60px;
+    height: 32px;
+    background-color: var(--switch-bg); // Usa tu variable secundaria/terciaria
+    border-radius: 50px;
+    cursor: pointer !important;
+    position: relative;
+    padding: 0 5px;
+    transition: background-color 0.4s ease;
+  }
+   .theme-switch__checkbox {
+    display: none !important; // Chau a la tildecita fea
+  }
+  .theme-switch__circle {
+    display: block;
+    width: 22px;
+    height: 22px;
+    background-color: var(--switch-circle); // Cambia según el tema
+    border-radius: 50%;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); // Efecto elástico
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  // LA LÓGICA DEL MOVIMIENTO
+  .theme-switch__checkbox:checked + .theme-switch__circle {
+    transform: translateX(28px); // Desliza la bolita a la derecha
+  }
+
+nav{ 
+    position: fixed;
+    top:0 !important;
+    left:0;
+    z-index: 2000 !important;
+    padding: 0 30px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    background-color: transparent;
+    font-family: variable.$font-primary !important;
+    font-size: 1.1rem !important;
+    color: var(--text-color);
+    justify-content: space-between;
+    align-items:center;
+}
+
+details{
+    position: relative;
+    summary {
+        outline: none;
+        font-family: variable.$font-primary;
+        background-color: var(--overlay-color) !important;
+        font-size: 1.2rem !important;
+        list-style: none;;
+        cursor: pointer;
+        color: var(--text-color);
+        }
+        &::-webkit-details-marker { display: none; }
+}
+
+.accordion-content {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 200px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    background-color: var(--bg-color);
+    padding: 10px;
+    ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+            
+        li a{
+            color: var(--text-color);
+            text-decoration: none;
+            font-family: variable.$font-primary !important;
+            display: block;
+            padding: 10px;          /* Espaciado interno para hacer los clicks más fáciles */
+            &:hover {
+                font-weight: bold;
+                color: var(--hover-color) !important;
+                background-color: var(--hover-bg) !important;
+                padding-left: 15px !important;
+            }
+        }
+    }
+}
+
+
+.hero {
+    background-image: linear-gradient(var(--overlay-color), var(--overlay-color)),
+    var(--header-background);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    top: 0;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: variable.$font-heading;
+    h1 {
+        font-size: 3.8rem;
+        padding-top: 2.5em;
+        margin-bottom: 0.5em;
+    }
+    p {
+        font-size: 1.4rem;
+    }
+    .neon-text {
+        color: var(--hero-color);
+        transition: text-shadow 0.3s ease;
+
+        [data-theme="light"] & {
+            @include mix.sombra-texto(2px, 2px, 4px, rgba(0, 0, 0, 0.7));
+            font-weight: bold;}
+
+        [data-theme="dark"] & { 
+        @include mix.neon-glow(variable.$color-neon, 0px, 5px, 10px, 15px);}
+    }
+}
+ 
+
+
+
+/* Secciones */
+section {
+    padding: 1em 1.5em;
+
+    p{
+        font-family: variable.$font-secondary;
+        color: var(--text-color);
+    }
+    h2 {
+    font-family: variable.$font-primary;
+    color: var(--title-color);
+    margin-bottom: 20px;
+    text-align: center;
+    }
+}
+
+
+
+
+/* Proyectos */
+
+.proyecto {
+    background-color: var(--bg-color);
+    border: 1px solid var(--bg-color);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    
+    h3 {
+        font-family: variable.$font-primary;
+        color: var(--title-color);
+        margin-bottom: 10px;
+    }
+
+    a {
+        font-family: variable.$font-secondary;
+        color: var(--title-color);
+        text-decoration: none;
+        margin-right: 15px;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+
+/* Contacto */
+#contacto a {
+    color: var(--title-color);
+    text-decoration: none;
+}
+
+#contacto a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: transparent;
+    color: var(--text-color);
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 40px;
+}

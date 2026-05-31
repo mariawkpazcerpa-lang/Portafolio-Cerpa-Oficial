@@ -1,0 +1,19 @@
+{
+  "name": "mdb-standard-app",
+  "version": "9.3.0",
+  "homepage": "https://mdbootstrap.com/docs/standard/",
+  "license": "SEE LICENSE IN <License.txt>",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "sass --watch SASS/style.scss:CSS/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "commonjs",
+  "dependencies": {
+    "mdb-ui-kit": "^9.3.0",
+    "sass": "^1.99.0"
+  }
+}

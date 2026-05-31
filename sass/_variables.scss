@@ -1,0 +1,63 @@
+//Fuentes
+$font-primary: 'Bodoni Moda', serif;
+$font-secondary: 'Playfair Display', serif;
+$font-heading: 'Roboto Mono', monospace;
+
+//COLORES
+$color-primary: #6b4f1d;
+$color-secondary: #2f2a24;
+$color-terciary: #f5e6c8;
+$color-quaternary: #b8860b;
+$color-light: #f9f9f9;
+$color-neon: $color-terciary;
+
+//Variables para modo claro
+$bg-light: $color-light;
+$title-light: $color-primary;
+$text-light: $color-secondary;
+$overlay-light: rgba(255, 255, 255, 0.8);
+
+
+//Variables para modo oscuro
+$bg-dark: $color-secondary;
+$title-dark: $color-quaternary;
+$text-dark: $color-terciary;
+$overlay-dark: rgba(0, 0, 0, 0.7);
+
+:root {
+    --body-background: url('/img/fondohtml.png');
+    --header-background: url('/img/header-light.png');
+    --bg-color: #{$bg-light};
+    --title-color: #{$title-light};
+    --text-color: #{$text-light};
+    --switch-bg: #{$color-secondary};
+    --switch-circle: #{$color-terciary};
+    --hover-bg: #{$color-secondary};
+    --hover-color:#{$color-terciary};
+    --hero-color:#{$color-quaternary};
+    --overlay-color: #{$overlay-light};
+}
+
+
+[data-theme="dark"] {
+    --body-background: url('/img/fondohtmldark.png');
+    --header-background: url('/img/header.png');
+    --bg-color: #{$bg-dark};
+    --title-color: #{$title-dark};
+    --text-color: #{$text-dark};
+    --switch-bg: #{$color-terciary};
+    --switch-circle: #{$color-secondary};
+    --hover-color: #{$color-quaternary};
+    --hover-bg: #{$color-terciary};
+    --hero-color:#{$color-light};
+    --overlay-color: #{$overlay-dark};
+}
+
+body {
+    background-image: var(--body-background);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    transition: background-image 0.3s ease, color 0.3s ease; 
+}
+

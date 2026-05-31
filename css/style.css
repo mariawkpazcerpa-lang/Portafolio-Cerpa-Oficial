@@ -1,0 +1,240 @@
+@charset "UTF-8";
+:root {
+  --body-background: url('/img/fondohtml.png');
+  --header-background: url('/img/header-light.png');
+  --bg-color: #f9f9f9;
+  --title-color: #6b4f1d;
+  --text-color: #2f2a24;
+  --switch-bg: #2f2a24;
+  --switch-circle: #f5e6c8;
+  --hover-bg: #2f2a24;
+  --hover-color:#f5e6c8;
+  --hero-color:#b8860b;
+  --overlay-color: rgba(255, 255, 255, 0.8);
+}
+
+[data-theme=dark] {
+  --body-background: url('/img/fondohtmldark.png');
+  --header-background: url('/img/header.png');
+  --bg-color: #2f2a24;
+  --title-color: #b8860b;
+  --text-color: #f5e6c8;
+  --switch-bg: #f5e6c8;
+  --switch-circle: #2f2a24;
+  --hover-color: #b8860b;
+  --hover-bg: #f5e6c8;
+  --hero-color:#f9f9f9;
+  --overlay-color: rgba(0, 0, 0, 0.7);
+}
+
+body {
+  background-image: var(--body-background);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+  transition: background-image 0.3s ease, color 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 70px !important;
+  background-image: var(--body-background);
+  background-repeat: no-repeat; /* <-- Esta es la clave para evitar el mosaico */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: "Bodoni Moda", serif;
+  line-height: 1.6;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.theme-switch__label {
+  display: flex;
+  align-items: center;
+  width: 60px;
+  height: 32px;
+  background-color: var(--switch-bg);
+  border-radius: 50px;
+  cursor: pointer !important;
+  position: relative;
+  padding: 0 5px;
+  transition: background-color 0.4s ease;
+}
+
+.theme-switch__checkbox {
+  display: none !important;
+}
+
+.theme-switch__circle {
+  display: block;
+  width: 22px;
+  height: 22px;
+  background-color: var(--switch-circle);
+  border-radius: 50%;
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.theme-switch__checkbox:checked + .theme-switch__circle {
+  transform: translateX(28px);
+}
+
+nav {
+  position: fixed;
+  top: 0 !important;
+  left: 0;
+  z-index: 2000 !important;
+  padding: 0 30px;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  background-color: transparent;
+  font-family: "Bodoni Moda", serif !important;
+  font-size: 1.1rem !important;
+  color: var(--text-color);
+  justify-content: space-between;
+  align-items: center;
+}
+
+details {
+  position: relative;
+}
+details summary {
+  outline: none;
+  font-family: "Bodoni Moda", serif;
+  background-color: var(--overlay-color) !important;
+  font-size: 1.2rem !important;
+  list-style: none;
+  cursor: pointer;
+  color: var(--text-color);
+}
+details::-webkit-details-marker {
+  display: none;
+}
+
+.accordion-content {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 200px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: var(--bg-color);
+  padding: 10px;
+}
+.accordion-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.accordion-content ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-family: "Bodoni Moda", serif !important;
+  display: block;
+  padding: 10px; /* Espaciado interno para hacer los clicks más fáciles */
+}
+.accordion-content ul li a:hover {
+  font-weight: bold;
+  color: var(--hover-color) !important;
+  background-color: var(--hover-bg) !important;
+  padding-left: 15px !important;
+}
+
+.hero {
+  background-image: linear-gradient(var(--overlay-color), var(--overlay-color)), var(--header-background);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  top: 0;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Roboto Mono", monospace;
+}
+.hero h1 {
+  font-size: 3.8rem;
+  padding-top: 2.5em;
+  margin-bottom: 0.5em;
+}
+.hero p {
+  font-size: 1.4rem;
+}
+.hero .neon-text {
+  color: var(--hero-color);
+  transition: text-shadow 0.3s ease;
+}
+[data-theme=light] .hero .neon-text {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+}
+[data-theme=dark] .hero .neon-text {
+  text-shadow: 0 0 0px #f5e6c8, 0 0 5px #f5e6c8, 0 0 10px #f5e6c8, 0 0 15px #f5e6c8;
+}
+
+/* Secciones */
+section {
+  padding: 1em 1.5em;
+}
+section p {
+  font-family: "Playfair Display", serif;
+  color: var(--text-color);
+}
+section h2 {
+  font-family: "Bodoni Moda", serif;
+  color: var(--title-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Proyectos */
+.proyecto {
+  background-color: var(--bg-color);
+  border: 1px solid var(--bg-color);
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+.proyecto h3 {
+  font-family: "Bodoni Moda", serif;
+  color: var(--title-color);
+  margin-bottom: 10px;
+}
+.proyecto a {
+  font-family: "Playfair Display", serif;
+  color: var(--title-color);
+  text-decoration: none;
+  margin-right: 15px;
+}
+.proyecto a:hover {
+  text-decoration: underline;
+}
+
+/* Contacto */
+#contacto a {
+  color: var(--title-color);
+  text-decoration: none;
+}
+
+#contacto a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background-color: transparent;
+  color: var(--text-color);
+  text-align: center;
+  padding: 25px 20px;
+  margin-top: 40px;
+}
+
+/*# sourceMappingURL=style.css.map */
