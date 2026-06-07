@@ -13,6 +13,8 @@
   "author": "",
   "type": "commonjs",
   "dependencies": {
+    "@supabase/ssr": "^0.10.3",
+    "@supabase/supabase-js": "^2.107.0",
     "mdb-ui-kit": "^9.3.0",
     "sass": "^1.99.0"
   }

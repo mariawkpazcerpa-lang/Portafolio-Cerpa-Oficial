@@ -109,7 +109,7 @@ details summary {
   outline: none;
   font-family: "Bodoni Moda", serif;
   background-color: var(--overlay-color) !important;
-  font-size: 1.2rem !important;
+  font-size: 1.5rem !important;
   list-style: none;
   cursor: pointer;
   color: var(--text-color);
@@ -136,6 +136,7 @@ details::-webkit-details-marker {
   color: var(--text-color);
   text-decoration: none;
   font-family: "Bodoni Moda", serif !important;
+  font-size: 1.3rem !important;
   display: block;
   padding: 10px; /* Espaciado interno para hacer los clicks más fáciles */
 }
@@ -181,41 +182,214 @@ details::-webkit-details-marker {
 
 /* Secciones */
 section {
-  padding: 1em 1.5em;
+  padding: 1em 1em;
+  align-items: center !important;
+  justify-content: center !important;
 }
-section p {
+section p, section label, section input, section textarea {
   font-family: "Playfair Display", serif;
   color: var(--text-color);
 }
 section h2 {
+  font-size: 2.5rem;
+}
+section h2, section h3, section h4 {
   font-family: "Bodoni Moda", serif;
   color: var(--title-color);
   margin-bottom: 20px;
   text-align: center;
+  padding: 1.5em;
+}
+section ul {
+  list-style: none;
+  color: var(--text-color);
+  font-family: "Playfair Display", serif;
+  padding: 0;
+  margin: 0;
+}
+section button {
+  background-color: var(--switch-circle) !important;
+  color: var(--switch-bg) !important;
+  border-color: var(--hover-color);
+  border-radius: 5px;
+  border-style: groove;
+  padding: 10px 20px;
+  font-family: "Bodoni Moda", serif;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+section button:hover {
+  background-color: var(--hover-bg) !important;
+  color: var(--hover-color) !important;
+}
+
+.btn-certificado {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-left: 0.8rem;
+  font-size: 0.85rem;
+  color: var(--title-color) !important;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.btn-certificado:hover {
+  color: var(--hover-bg) !important;
+  text-decoration: underline;
 }
 
 /* Proyectos */
-.proyecto {
-  background-color: var(--bg-color);
-  border: 1px solid var(--bg-color);
-  padding: 25px;
-  margin-bottom: 25px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+#PortfolioProyectos {
+  display: flex;
+  width: 95%;
+  gap: 0.7em;
+  align-items: center !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
 }
-.proyecto h3 {
+
+.carrousel {
+  width: 100%;
+  min-height: 950px;
+  display: block;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 20px;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.carrousel-track {
+  position: relative;
+  isolation: isolate;
+  transform-style: preserve-3d;
+  height: 850px;
+  width: 90%;
+  max-width: 700px;
+  min-height: 500px;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  perspective: 1200px;
+}
+
+.proyectos img {
+  border-style: none;
+  display: block;
+  overflow: hidden;
+  width: 90%;
+  height: auto !important;
+  align-content: center;
+  border-radius: 3em;
+}
+
+.proyecto-card {
+  border-style: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  text-align: center;
+}
+
+.item {
+  position: absolute;
+  box-sizing: border-box;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  width: 450px;
+  height: 850px;
+  left: 50%;
+  background: var(--overlay-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.7s ease, cubic-bezier(0.25, 1, 0.5, 1), opacity 0.7s ease;
+  transform: translateX(-50%) scale(1);
+  opacity: 0;
+  z-index: 0;
+}
+.item h3, .item h4 {
+  color: var(--title-color);
   font-family: "Bodoni Moda", serif;
-  color: var(--title-color);
-  margin-bottom: 10px;
+  max-width: 90%;
+  padding: 0.3em;
+  margin: 0 auto 5px auto;
+  word-wrap: break-word;
 }
-.proyecto a {
+.item p {
+  color: var(--text-color);
   font-family: "Playfair Display", serif;
-  color: var(--title-color);
-  text-decoration: none;
-  margin-right: 15px;
+  padding: 0.5em;
+  margin: 0.5em;
 }
-.proyecto a:hover {
-  text-decoration: underline;
+.item ul {
+  display: flex;
+  list-style: none;
+  padding: 10px !important;
+  margin: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.item ul li {
+  color: var(--text-color);
+  font-family: "Playfair Display", serif;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  border-style: groove;
+}
+
+.item.center {
+  transform: translate(-50%, 0%) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 10;
+}
+
+.item.left {
+  transform: translate(-125%, 0%) scale(0.6);
+  opacity: 0.6;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.item.right {
+  transform: translate(25%, 0%) scale(0.6);
+  opacity: 0.6;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+#prev, #next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  border-width: 1.5px;
+  border-style: groove;
+  padding: 10px 15px;
+  font-weight: bold;
+  font-family: "Bodoni Moda", serif;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+#prev {
+  left: 25px;
+}
+
+#next {
+  right: 25px;
 }
 
 /* Contacto */

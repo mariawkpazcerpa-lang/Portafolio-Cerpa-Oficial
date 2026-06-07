@@ -1,0 +1,61 @@
+[   {
+        "id": 0,
+        "nombre": "Aprec Abogados ~ Plataforma Web Legal",
+        "categoria": "Fullstack / UI-UX.",
+        "imagen": "img/portfolio/Aprec.png",
+        "skills": ["JavaScript", "Supabase", "Sass", "Bootstrap", "RLS", "Git", "GitHub Pages","PostgreSQL"],
+        "pagina": "https://mariawkpazcerpa-lang.github.io/Aprec-Estudio-Juridico/",
+        "repositorio": "https://github.com/mariawkpazcerpa-lang/Aprec-Estudio-Juridico",
+        "descripcion": "Diseño y desarrollo de una plataforma web multipágina para un estudio jurídico. Implementa una interfaz sobria y responsiva utilizando Bootstrap y Sass, combinada con una arquitectura que conecta formularios de consulta directamente a una base de datos en tiempo real mediante Supabase (PostgreSQL). Incluye la configuración de políticas de seguridad a nivel de filas (RLS) para garantizar la total protección y confidencialidad de los datos de los clientes."
+    },
+     {
+        "id": 1,
+        "nombre": "Cafetería Morning ~ Interfaz Dinámica",
+        "categoria": "Frontend",
+        "imagen": "img/portfolio/Cafeteria Morning Js.png",
+        "skills":[ "HTML5", "CSS3", "JavaScript", "Media Queries", "Lógica de Carrito de Compras", "Git", "GitHub Pages"],
+        "pagina": "https://mariawkpazcerpa-lang.github.io/Cafeteria-morning-Final-Version/productos.html",
+        "repositorio": "https://github.com/mariawkpazcerpa-lang/Cafeteria-morning-Final-Version",
+        "descripcion": "Sitio web para cafetería con catálogo de productos y carrito de compras desarrollado con HTML, CSS y JavaScript. Implementa manipulación del DOM, almacenamiento y actualización dinámica de productos, diseño adaptable y una interfaz enfocada en la experiencia del usuario."
+    },
+     {
+        "id": 2,
+        "nombre": "Inventario de Supermercado",
+        "categoria": "Backend",
+        "imagen": "img/portfolio/inventario python.png",
+        "skills": ["Python", "SQLite", "Colorama"],
+        "pagina": "https://github.com/codespaces/new?hide_repo_select=true&ref=master&repo=mariawkpazcerpa-lang/inventario_productos",
+        "repositorio": "https://github.com/mariawkpazcerpa-lang/inventario_productos",
+        "descripcion": "Sistema de gestión de inventario de productos desarrollado en Python utilizando SQLite como motor de base de datos local y Colorama para mejorar la interfaz de usuario en la terminal. La aplicación implementa un CRUD completo que permite a los administradores registrar nuevos productos, actualizar stock en tiempo real, realizar búsquedas avanzadas por categorías y generar reportes de alertas de bajo inventario de manera eficiente y ordenada."
+    },
+     {
+        "id": 3,
+        "nombre": "Base de Datos de Clientes",
+        "categoria": "Backend",
+        "imagen": "img/portfolio/basedatosclientes python.png",
+        "skills": ["Python", "SQLite", "Colorama"],
+        "pagina": "https://github.com/codespaces/new?hide_repo_select=true&ref=master&repo=mariawkpazcerpa-lang/Base-de-Datos-de-Clientes",
+        "repositorio": "https://github.com/mariawkpazcerpa-lang/Base-de-Datos-de-Clientes",
+        "descripcion": "Este es un proyecto de consola desarrollado en Python que implementa un sistema CRUD (Crear, Leer, Actualizar y Eliminar) robusto para la administración de clientes, integrado con SQLite para garantizar la persistencia de los datos. Incluye validaciones de entrada para evitar registros duplicados, formateo dinámico de datos en consola y una arquitectura limpia que separa la lógica del negocio del manejo directo de la base de datos." 
+    },
+     {
+        "id": 4,
+        "nombre": "Cafetería Morning ~ HTML & CSS",
+        "categoria": "Frontend",
+        "imagen": "img/portfolio/Cafeteria morning.png",
+        "skills": ["HTML5", "CSS3", "Formspree", "Galerías de Productos", "Menús Desplegables", "Testimonios Interactivos"],
+        "pagina": "https://mariawkpazcerpa-lang.github.io/Cafeteria-morning/",
+        "repositorio": "https://github.com/mariawkpazcerpa-lang/Cafeteria-morning",
+        "descripcion": "Diseñé y desarrollé un sitio web ficticio de cafetería con HTML y CSS, incluyendo menús desplegables, galerías de productos, testimonios interactivos y formularios funcionales integrados con Formspree."
+    },
+    {   
+        "id": 5,
+        "nombre": "Portfolio Cerpa ~ HTML & CSS",
+        "categoria": "Frontend",
+        "imagen": "img/portfolio/Primer portfolio.png",
+        "skills": ["HTML5", "CSS3", "Animaciones CSS", "Diseño Responsivo", "Maquetación Semántica"],
+        "pagina": "https://mariawkpazcerpa-lang.github.io/portfolio_cerpa/",
+        "repositorio": "https://github.com/mariawkpazcerpa-lang/portfolio_cerpa",
+        "descripcion": "Primer portfolio personal desarrollado con HTML y CSS. Creado para presentar información profesional, proyectos y habilidades técnicas mediante una estructura web estática, aplicando conceptos fundamentales de maquetación, estilos y organización de contenido."
+    }
+]

@@ -15,7 +15,7 @@
 <body>
      <nav>
         <div class="acordion">  
-            <details class="accordion-item" open>
+            <details class="accordion-item">
                 <summary class="accordion-button cursor-pointer">☰ Menú</summary>
                     <div class="accordion-content" style="background-color: var(--bg-color); color: var(--text-color);">
                         <ul>
@@ -38,10 +38,39 @@
         <!-- Contacto -->
         <section id="contacto">
             <h2>Contacto</h2>
-            <p>Email: <a href="mariawkpazcerpa@gmail.com">mariawkpazcerpa@gmail.com</a></p>
-            <p>LinkedIn: <a href="https:www.linkedin.com/in/maría-de-la-paz-cerpa-1b875015b/" target="_blank">Maria de la Paz Cerpa</a></p>
-            <p>GitHub: <a href="https://github.com/mariawkpazcerpa-lang" target="_blank">Maria de la Paz Cerpa</a></p>
-            <p>¡También podés enviarme un mensaje directo!</p>
+            <div class="contact row mb-4">
+                <div class="contact-info col-md-6">
+                    <h4>¡Conectemos!</h4>
+                    <p>Estoy siempre abierta a nuevas oportunidades y colaboraciones. Si querés ponerte
+                    <p>Email: <a href="mariawkpazcerpa@gmail.com">mariawkpazcerpa@gmail.com</a></p>
+                    <p>LinkedIn: <a href="https:www.linkedin.com/in/maría-de-la-paz-cerpa-1b875015b/" target="_blank">Maria de la Paz Cerpa</a></p>
+                    <p>GitHub: <a href="https://github.com/mariawkpazcerpa-lang" target="_blank">Maria de la Paz Cerpa</a></p>
+                    <p>¡También podés enviarme un mensaje directo!</p>
+                </div>
+                <div class="contact-form col-md-6">
+                    <form id="contactForm">
+                        <h4>¡Hablemos!</h4>
+                        <p>¿Tenés un proyecto que querés hacer realidad o estás buscando sumar una desarrolladora a tu equipo técnico? Me apasiona diseñar bases de datos eficientes, automatizar procesos en el backend y crear interfaces dinámicas. Escribime si necesitás una solución personalizada para tu negocio o si querés que charlemos sobre propuestas laborales formales.</p>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="asunto" class="form-label">Asunto</label>
+                            <input type="text" class="form-control" id="asunto" required>
+                        </div>  
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
@@ -49,7 +78,7 @@
     </footer>
     <script src="/js/mdb.umd.min.js"></script>
     <script src="/js/script.js"></script>
-    <script src="/js/api.js"></script>
+    <script type="module" src="/js/api.js"></script>
 </body>
 </body>
 </html>

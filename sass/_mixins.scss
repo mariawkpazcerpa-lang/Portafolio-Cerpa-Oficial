@@ -1,7 +1,8 @@
+@use "sass:list";
 @mixin neon-glow($color, $blur-multipliers...) {
   $shadows: ();
   @each $blur in $blur-multipliers {
-    $shadows: append($shadows, 0 0 $blur $color, comma);
+    $shadows: list.append($shadows, 0 0 $blur $color, comma);
   }
   text-shadow: $shadows;
 }
