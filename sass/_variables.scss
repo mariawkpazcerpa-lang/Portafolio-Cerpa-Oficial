@@ -25,8 +25,8 @@ $text-dark: $color-terciary;
 $overlay-dark: rgba(0, 0, 0, 0.7);
 
 :root {
-    --body-background: url('img/fondohtml.png');
-    --header-background: url('img/header-light.png');
+    --body-background: url('/img/fondohtml.png');
+    --header-background: url('/img/header-light.png');
     --bg-color: #{$bg-light};
     --title-color: #{$title-light};
     --text-color: #{$text-light};
@@ -40,8 +40,8 @@ $overlay-dark: rgba(0, 0, 0, 0.7);
 
 
 [data-theme="dark"] {
-    --body-background: url('img/fondohtmldark.png');
-    --header-background: url('img/header.png');
+    --body-background: url('/img/fondohtmldark.png');
+    --header-background: url('/img/header.png');
     --bg-color: #{$bg-dark};
     --title-color: #{$title-dark};
     --text-color: #{$text-dark};

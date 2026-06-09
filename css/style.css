@@ -1,7 +1,7 @@
 @charset "UTF-8";
 :root {
-  --body-background: url('img/fondohtml.png');
-  --header-background: url('img/header-light.png');
+  --body-background: url('/img/fondohtml.png');
+  --header-background: url('/img/header-light.png');
   --bg-color: #f9f9f9;
   --title-color: #6b4f1d;
   --text-color: #2f2a24;
@@ -14,8 +14,8 @@
 }
 
 [data-theme=dark] {
-  --body-background: url('img/fondohtmldark.png');
-  --header-background: url('img/header.png');
+  --body-background: url('/img/fondohtmldark.png');
+  --header-background: url('/img/header.png');
   --bg-color: #2f2a24;
   --title-color: #b8860b;
   --text-color: #f5e6c8;
