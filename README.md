@@ -160,8 +160,8 @@ https://mariawkpazcerpa-lang.github.io/Portafolio-Cerpa-Oficial/
 
 ## 📝 Información de Contacto
 
-- **Correo**: paz.cerpa@example.com (o tu correo)
-- **LinkedIn**: [LinkedIn Profile](https://linkedin.com/in/...)
+- **Correo**: mariawkpazcerpa@gmail.com
+- **LinkedIn**: [LinkedIn Profile](https://www.linkedin.com/in/mar%C3%ADa-de-la-paz-cerpa-1b875015b/)
 - **GitHub**: [GitHub Profile](https://github.com/mariawkpazcerpa-lang)
 
 ## 📄 Licencia
