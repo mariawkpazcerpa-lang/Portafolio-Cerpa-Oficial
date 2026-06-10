@@ -186,9 +186,24 @@ section {
   align-items: center !important;
   justify-content: center !important;
 }
-section p, section label, section input, section textarea {
+section p, section label {
   font-family: "Playfair Display", serif;
-  color: var(--text-color);
+  color: var(--text-color) !important;
+}
+section input, section textarea {
+  background-color: var(--overlay-color) !important;
+  border: 1px solid var(--hover-color) !important;
+  border-radius: 5px;
+  padding: 10px;
+  color: var(--text-color) !important;
+  font-family: "Playfair Display", serif;
+  width: 100%;
+  max-width: 400px;
+  transition: border-color 0.3s ease;
+}
+section input:focus, section textarea:focus {
+  border-color: var(--hover-bg) !important;
+  outline: none;
 }
 section h2 {
   font-size: 2.5rem;
@@ -311,7 +326,7 @@ section button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.7s ease, cubic-bezier(0.25, 1, 0.5, 1), opacity 0.7s ease;
+  transition: transform 0.8s ease, cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s ease;
   transform: translateX(-50%) scale(1);
   opacity: 0;
   z-index: 0;
