@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
 </head>
 <body>
      <nav>
@@ -38,12 +38,13 @@
         <!-- Proyectos -->
         <section id="proyectos" class="proyectos">
             <h2>Portafolio</h2>
-            <div class="carrousel-container">
-                <div class="carousel" id="proyectos-carousel">
-                    <button id="prev"><<</button>
-                    <ul id="PortafolioProyectos" class="carrousel-track"> </ul>
-                    <button id="next">>></button>
+            <div class="carousel-container">
+                <button class="swiper-button-prev"></button>
+                <div class="swiper" id="proyectos-carousel">
+                    <div class="swiper-wrapper" id="PortfolioProyectos">     
+                    </div>
                 </div>
+                <button class="swiper-button-next"></button>
             </div>
         </section>
     </main>
@@ -51,6 +52,7 @@
         <p>&copy; 2025 Paz Cerpa | Todos los derechos reservados</p>
     </footer>
     <script src="js/mdb.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </body>

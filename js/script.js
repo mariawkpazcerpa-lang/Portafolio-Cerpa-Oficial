@@ -1,3 +1,4 @@
+
 const checkbox = document.getElementById('theme-toggle'); 
 const currentTheme = localStorage.getItem('theme');
 
@@ -19,6 +20,7 @@ checkbox.addEventListener('change', (e) => {
     }
 });
 
+let proyectos = [];
 fetch('proyectos.json')
     .then(response => {
         if (!response.ok) {
@@ -28,7 +30,7 @@ fetch('proyectos.json')
 })
     .then(data => {
         proyectos = data;
-        const contenedor = document.getElementById("PortafolioProyectos");
+        const contenedor = document.getElementById("PortfolioProyectos");
 
         if (!contenedor) {
             return;
@@ -36,8 +38,7 @@ fetch('proyectos.json')
 
         data.forEach(proyecto => {
             const proyectoCard= `
-            <li>
-            <div class = "item">
+            <div class = "swiper-slide">
                 <div class = "proyecto-card">
                     <h3>${proyecto.nombre}</h3>
                     <h4>${proyecto.categoria}</h4>
@@ -50,49 +51,40 @@ fetch('proyectos.json')
                     <button onclick="window.open('${proyecto.repositorio}', '_blank')">Ver Código</button>
                 </div>
             </div>
-            </li>
         `;
             contenedor.innerHTML += proyectoCard;
         });
 
         // Initialize carousel after all items are added to DOM
-        const items = document.querySelectorAll('.item');
-        const total = items.length;
-        let currentIndex = 0;
+        const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 3,
+        slidesPerGroup: 1,
+        centeredSlides: true,
+        spaceBetween: 0,
+        effect: 'coverflow',
 
-        function getIndex(index) {
-            return(index + total) % total;
-        }
+        observer: true, 
+        observeParents: true,
 
-        function renderCarousel() {
-            items.forEach(item => {
-                item.classList.remove('left', 'center', 'right');
-            });
+         coverflowEffect: {
+            rotate: 2,
+            scale: 1,  
+            stretch: -40,
+            depth: 150,        // Distancia 3D (Z-index/Perspectiva de alejamiento lateral)
+            modifier: 1,       // Multiplicador del efecto
+            slideShadows: false, // Desactiva sombras automáticas si no las quieres
+            transitionDuration: 300, // Duración de la transición en ms
+        },
+        // Navigation arrows
+        navigation: {
+            nextEl: '.carousel-container .swiper-button-next',
+            prevEl: '.carousel-container .swiper-button-prev',
+        },
+    });
 
-            const center = getIndex(currentIndex);
-            const left = getIndex(currentIndex -1);
-            const right = getIndex(currentIndex +1);
-            
-            items[center].classList.add('center');
-            items[left].classList.add('left');
-            items[right].classList.add('right');
-        }
-
-        console.log('items:', items);
-        console.log('items.length:', items.length);
-        
-        // Initial render
-        renderCarousel();
-
-        // Event listeners for navigation
-        document.getElementById('next').addEventListener('click', () => {
-            currentIndex++;
-            renderCarousel();
-        });
-
-        document.getElementById('prev').addEventListener('click', () => {
-            currentIndex--;
-            renderCarousel();
-        });
+       
     })
     .catch(error => console.error('Error al cargar el archivo JSON:', error));
