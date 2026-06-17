@@ -235,4 +235,4 @@ Este proyecto está bajo la licencia especificada en `LICENSE.txt`.
 
 Hecho con ❤️ por [Paz Cerpa](https://github.com/mariawkpazcerpa-lang)
 
-**Última actualización**: Junio 2024
+**Última actualización**: Junio 2026
