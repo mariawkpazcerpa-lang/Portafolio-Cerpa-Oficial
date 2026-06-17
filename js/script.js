@@ -60,12 +60,17 @@ fetch('proyectos.json')
         // Optional parameters
         direction: 'horizontal',
         loop: true,
-        slidesPerView: 3,
+        slidesPerView: 1,
         slidesPerGroup: 1,
         centeredSlides: true,
         spaceBetween: 0,
         effect: 'coverflow',
-
+        breakpoints: {
+            
+            1024: {
+                slidesPerView: 3
+            }
+        },
         observer: true, 
         observeParents: true,
 
